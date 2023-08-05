@@ -17,28 +17,31 @@ function generatePassword () {
           response=NumofChar;
       }
 }
+var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use uppercase characters, y or n");
 
-  if (response = n) {
+  if (response = "n") {
     response=null;
   } else {
     response=useUpperCaseChar;
   }
 }
+var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use lowercase characters, y or n");
 
-  if (response = n) {
+  if (response = "n") {
     response=null;
   } else {
     response=useLowerCaseChar;
   }
 }
+var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use numerical characters, y or n");
 
-  if (response = n) {
+  if (response = "n") {
     response=null;
   } else {
     response=useNumberChar;
@@ -47,7 +50,7 @@ function generatePassword () {
 function generatePassword () {
   var response=prompt("Do you want to use special characters, y or n");
 
-  if (response = n) {
+  if (response = "n") {
     response=null;
   } else {
     response=useSpecialChar;
@@ -58,16 +61,15 @@ function generatePassword () {
 
 
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
