@@ -11,6 +11,9 @@ var tempLowCase = [];
 var tempNumChar = [];
 var tempSpecChar = [];
 var passwordLength;
+var i=[1,2,3,4]
+var temptotalResponses=[];
+
 var generateBtn = document.querySelector("#generate");
 function generatePassword () {
 var response=prompt("How many characters would you like between 8 and 12?") 
@@ -25,33 +28,38 @@ var responseUpCase=prompt("Do you want Upper Case letters?")
   if (responseUpCase = "y") {
     tempUpCase.push(uppercaseCharacters);
   } else {
-    responseUpCase=false;
+    temptotalResponses.push(i);
   }
 var responseLowCase=prompt("Do you want Lower Case letters?")
   if (responseLowCase = "y") {
     tempLowCase.push(lowercaseCharacters);
     } else {
-    responseLowCase=false;
+      temptotalResponses.push(i);
   }
   var responseNumChar=prompt("Do you want Numerals?")
   if (responseNumChar = "y") {
       tempNumChar.push(numbers);
     } else {
-      responseNumChar=false;
+      temptotalResponses.push(i);
     }
     var responseSpecChar=prompt("Do you want Special Characters?")
   if (responseSpecChar = "y") {
       tempSpecChar.push(specialCharacters);
     } else {
-      responseSpecChar=false;}
-  var totalResponse=(responsetempUpCase + responsetempLowCase + responsetempNumChar + responsetempSpecChar) 
-  if (totalResponse === false) {
+      temptotalResponses.push(i);
+    }
+ 
+ for (var i; i<=3; i++) {
+   var temptotalResponses=[i];
+    console.log(temptotalResponses);
+    if (totalResponses=4) {
       alert("not enought information. A password can not be generated");
     }
 }
+}
 
-arr=[tempUpCase, tempLowCase, tempNumChar, tempSpecChar];
-console.log (arr);
+// arr=[tempUpCase, tempLowCase, tempNumChar, tempSpecChar];
+// console.log (arr);
 
 
 
