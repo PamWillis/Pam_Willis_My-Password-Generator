@@ -17,7 +17,6 @@ function generatePassword () {
           response=NumofChar;
       }
 }
-var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use uppercase characters, y or n");
 
@@ -27,7 +26,6 @@ function generatePassword () {
     response=useUpperCaseChar;
   }
 }
-var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use lowercase characters, y or n");
 
@@ -37,7 +35,6 @@ function generatePassword () {
     response=useLowerCaseChar;
   }
 }
-var generateBtn = document.querySelector("#generate");
 function generatePassword () {
   var response=prompt("Do you want to use numerical characters, y or n");
 
