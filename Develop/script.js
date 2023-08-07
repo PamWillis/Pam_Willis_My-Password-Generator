@@ -5,7 +5,6 @@ var specialCharacters =["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var numbers =["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var possibleCharacters =[];
-var chosenCharacters=[];
 var passwordLength =[];
 var noResponseCount = 0;
 
@@ -47,21 +46,24 @@ var responseSpecChar=prompt("Do you want Special Characters?")
   } else  {
       console.log("proceed");
   }
-}
+
+possibleCharacters = possibleCharacters.flat();
 console.log(possibleCharacters);
 console.log(passwordLength);
-
-function chosenCharacters () {
-  possibleCharacters.flat;
 }
-console.log(chosenCharacters);
 
 
-// function generatePassword () {
+var password =[];
 
-// }
+// number of values
+let total = possibleCharacters.length;
 
+for (i=0; i < passwordLength; i++)
+{ 
+  return Math.floor(Math.random() * total);
+  possibleCharacters.push(password); }
 
+console.log(password);
 
 
 
