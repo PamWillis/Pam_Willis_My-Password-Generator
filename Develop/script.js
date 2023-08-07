@@ -4,15 +4,10 @@ var uppercaseCharacters =["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 var specialCharacters =["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var numbers =["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-// var i=["How many characters would you like between 8 and 12?","Do you want Upper Case letters?","Do you want Lower Case letters?","Do you want Numerals?","Do you want Special Characters?"]
-
-var tempUpCase = [];
-var tempLowCase = [];
-var tempNumChar = [];
-var tempSpecChar = [];
-var passwordLength;
+var possibleCharacters =[];
+var chosenCharacters=[];
+var passwordLength =[];
 var noResponseCount = 0;
-
 
 var generateBtn = document.querySelector("#generate");
 function generatePassword () {
@@ -21,29 +16,29 @@ var response=prompt("How many characters would you like between 8 and 128?")
     response=alert("Not a valid response");
     return null; }
         else {
-          passwordLength=response;
+          passwordLength.push(response);
         }
 var responseUpCase=prompt("Do you want Upper Case letters?") 
   if (responseUpCase === "y") {
-    tempUpCase.push(uppercaseCharacters);
+    possibleCharacters.push(uppercaseCharacters);
     } else {
       noResponseCount++;
   }
 var responseLowCase=prompt("Do you want Lower Case letters?")
   if (responseLowCase === "y") {
-    tempLowCase.push(lowercaseCharacters);
+    possibleCharacters.push(lowercaseCharacters);
     } else {
       noResponseCount++;
   }
 var responseNumChar=prompt("Do you want Numerals?")
   if (responseNumChar === "y") {
-      tempNumChar.push(numbers);
+    possibleCharacters.push(numbers);
     } else {
       noResponseCount++;
   }
 var responseSpecChar=prompt("Do you want Special Characters?")
   if (responseSpecChar === "y") {
-      tempSpecChar.push(specialCharacters);
+    possibleCharacters.push(specialCharacters);
     } else {
       noResponseCount++;
   }
@@ -53,7 +48,19 @@ var responseSpecChar=prompt("Do you want Special Characters?")
       console.log("proceed");
   }
 }
-var guaranteedCharacters =[];
+console.log(possibleCharacters);
+console.log(passwordLength);
+
+function chosenCharacters () {
+  possibleCharacters.flat;
+}
+console.log(chosenCharacters);
+
+
+// function generatePassword () {
+
+// }
+
 
 
 
