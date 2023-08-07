@@ -11,51 +11,48 @@ var tempLowCase = [];
 var tempNumChar = [];
 var tempSpecChar = [];
 var passwordLength;
-var i=[1,2,3,4]
-var temptotalResponses=[];
+var noResponseCount = 0;
+
 
 var generateBtn = document.querySelector("#generate");
 function generatePassword () {
-var response=prompt("How many characters would you like between 8 and 12?") 
-  if (response < 8) {
-    response=alert("Not a valid response"); }
-      else if (response > 12 && response <=128) {
-        response=alert("Not a valid response"); }
+var response=prompt("How many characters would you like between 8 and 128?") 
+  if (response < 8 || response > 128) {
+    response=alert("Not a valid response");
+    return null; }
         else {
           passwordLength=response;
         }
 var responseUpCase=prompt("Do you want Upper Case letters?") 
-  if (responseUpCase = "y") {
+  if (responseUpCase === "y") {
     tempUpCase.push(uppercaseCharacters);
   } else {
-    temptotalResponses.push(i);
+    noResponseCount++;
   }
 var responseLowCase=prompt("Do you want Lower Case letters?")
-  if (responseLowCase = "y") {
+  if (responseLowCase === "y") {
     tempLowCase.push(lowercaseCharacters);
     } else {
-      temptotalResponses.push(i);
+      noResponseCount++;
   }
   var responseNumChar=prompt("Do you want Numerals?")
-  if (responseNumChar = "y") {
+  if (responseNumChar === "y") {
       tempNumChar.push(numbers);
     } else {
-      temptotalResponses.push(i);
+      noResponseCount++;
     }
     var responseSpecChar=prompt("Do you want Special Characters?")
-  if (responseSpecChar = "y") {
+  if (responseSpecChar === "y") {
       tempSpecChar.push(specialCharacters);
     } else {
-      temptotalResponses.push(i);
+      noResponseCount++;
     }
- 
- for (var i; i<=3; i++) {
-   var temptotalResponses=[i];
-    console.log(temptotalResponses);
-    if (totalResponses=4) {
-      alert("not enought information. A password can not be generated");
+  if (noResponseCount===4) {
+      alert("not enough information. A password can not be generated"); 
+  } else  {
+      console.log("proceed");
+
     }
-}
 }
 
 // arr=[tempUpCase, tempLowCase, tempNumChar, tempSpecChar];
