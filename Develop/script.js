@@ -26,8 +26,8 @@ var response=prompt("How many characters would you like between 8 and 128?")
 var responseUpCase=prompt("Do you want Upper Case letters?") 
   if (responseUpCase === "y") {
     tempUpCase.push(uppercaseCharacters);
-  } else {
-    noResponseCount++;
+    } else {
+      noResponseCount++;
   }
 var responseLowCase=prompt("Do you want Lower Case letters?")
   if (responseLowCase === "y") {
@@ -35,28 +35,26 @@ var responseLowCase=prompt("Do you want Lower Case letters?")
     } else {
       noResponseCount++;
   }
-  var responseNumChar=prompt("Do you want Numerals?")
+var responseNumChar=prompt("Do you want Numerals?")
   if (responseNumChar === "y") {
       tempNumChar.push(numbers);
     } else {
       noResponseCount++;
-    }
-    var responseSpecChar=prompt("Do you want Special Characters?")
+  }
+var responseSpecChar=prompt("Do you want Special Characters?")
   if (responseSpecChar === "y") {
       tempSpecChar.push(specialCharacters);
     } else {
       noResponseCount++;
-    }
+  }
   if (noResponseCount===4) {
       alert("not enough information. A password can not be generated"); 
   } else  {
       console.log("proceed");
-
-    }
+  }
 }
+var guaranteedCharacters =[];
 
-// arr=[tempUpCase, tempLowCase, tempNumChar, tempSpecChar];
-// console.log (arr);
 
 
 
