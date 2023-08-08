@@ -68,52 +68,57 @@ function generatePassword() {
   // Write password to the #password input
 
   var passwordText = [];
+  var remainderText = [];
 
-  for (var i = 0; i < passwordLength; i++) {
-    //first four ifs are to make sure one of each is in password
-    //question if all if statements need to be combined some how
-    if (responseUpCase === true) {
-      var randomIndex = Math.floor(Math.random() * uppercaseCharacters.length);
-      var value = uppercaseCharacters[randomIndex];
-      console.log(value);
-      passwordText.push(value);
-    }
-    if (responseLowCase === true) {
-      var randomIndex = Math.floor(Math.random() * lowercaseCharacters.length);
-      var value = lowercaseCharacters[randomIndex];
-      console.log(value);
-      passwordText.push(value);
-    }
-    if (responseNumChar === true) {
-      var randomIndex = Math.floor(Math.random() * numbers.length);
-      var value = numbers[randomIndex];
-      console.log(value);
-      passwordText.push(value);
-    }
-    if (responseSpecChar === true) {
-      var randomIndex = Math.floor(Math.random() * specialCharacters.length);
-      var value = specialCharacters[randomIndex];
-      console.log(value);
-      passwordText.push(value);
-    }
-    //This is to say # that are true minus passwordLength-not working
-    passwordLength = (passwordLength -= noResponseCount);
-    console.log(passwordLength);
-    //Last one is to put remainder in (not looping)
-    if (passwordLength > passwordText.length) {
-      var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
-      var value = possibleCharacters[randomIndex];
-      console.log(value);
-      passwordText.push(value);
-    }
-    //Joining selections together
-    console.log(passwordText);
-    var Joinpasswordtext = passwordText.join(" ")
-    console.log(Joinpasswordtext);
-    return Joinpasswordtext;
 
+  //first four ifs are to make sure one of each is in password
+  if (responseUpCase === true) {
+    var randomIndex = Math.floor(Math.random() * uppercaseCharacters.length);
+    var value = uppercaseCharacters[randomIndex];
+    console.log(value);
+    passwordText.push(value);
   }
+  if (responseLowCase === true) {
+    var randomIndex = Math.floor(Math.random() * lowercaseCharacters.length);
+    var value = lowercaseCharacters[randomIndex];
+    console.log(value);
+    passwordText.push(value);
+  }
+  if (responseNumChar === true) {
+    var randomIndex = Math.floor(Math.random() * numbers.length);
+    var value = numbers[randomIndex];
+    console.log(value);
+    passwordText.push(value);
+  }
+  if (responseSpecChar === true) {
+    var randomIndex = Math.floor(Math.random() * specialCharacters.length);
+    var value = specialCharacters[randomIndex];
+    console.log(value);
+    passwordText.push(value);
+  }
+  var passwordText = passwordText.join(" ");
+  console.log(passwordText);
+
+
+  //This is to say # that are true minus passwordLength NOT WORKING, cant read passwordLength as a number
+  passwordLength = (passwordLength -= noResponseCount);
+  console.log(passwordLength);
+  //Last one is to put remainder in
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+    var value = possibleCharacters[randomIndex];
+    console.log(value);
+    remainderText.push(value);
+  }
+  var remainderText = remainderText.join(" ");
+  console.log(remainderText);
+  
+  //Joining selections together
+  Finalpassword = [[passwordText] + [remainderText]];
+  return Finalpassword
+
 }
+
 
 // Write password to the #password input
 function writePassword() {
