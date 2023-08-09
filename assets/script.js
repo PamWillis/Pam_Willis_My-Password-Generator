@@ -15,7 +15,6 @@ function generatePassword() {
     alert("Not a valid response");
     return null;
   }
-
   var responseUpCase = confirm("Do you want Upper Case letters?");
   if (responseUpCase) {
     possibleCharacters.push(uppercaseCharacters);
@@ -68,73 +67,6 @@ function generatePassword() {
   return passwordText;
 }
 
-//Validate passwordText
-//if response is true - test
-//if response is false - mark as true
-
-// function to validate length
-function validatePasswordLength(passwordText) {
-  passwordText = /^(?=.*\d)$/;
-  if (validatePasswordLength.test(passwordText)) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
-// function to validate uppercase
-function validateUpperCase(passwordText) {
-  if (responseUpCase === true) {
-    passwordText = /^(?=uppercaseCharacters)$/;
-    (validateUpperCase.test(passwordText))
-    return true;
-  }
-  if (responseUpCase === false) {
-    return true;
-  }
-}
-// function to validate lowercase
-function validateLowerCase(passwordText) {
-  if (responseLowCase === true) {
-    passwordText = /^(?=lowercaseCharacters)$/;
-    (validateLowerCase.test(passwordText));
-    return true;
-  }
-  if (responseLowCase === false) {
-    return true;
-  }
-}
-// function to validate numbers
-function validateNumbers(passwordText) {
-  if (responseNumChar === true) {
-    passwordText = /^(?=numbers)$/;
-    (validateNumbers.test(passwordText));
-    return true;
-  }
-  if (responseNumChar === false) {
-    return true;
-  }
-}
-// function to special characters
-function validateSpecChar(passwordText) {
-  if (responseSpecChar === true) {
-    passwordText = /^(?=specialCharacters)$/;
-    (validateSpecChar.test(passwordText));
-    return true;
-  }
-  if (responseSpecChar === false) {
-    return true;
-  }
-}
-//if any are false - alert bad password, else if true - good password
-if (validatePasswordLength || validateUpperCase || validateLowerCase || validateNumbers || validateSpecChar !== true) {
-  alert("password does not meet criteria");
-
-}
-  else {
-    alert("password is valid");
-
-  }
 
 
 // Write password to the #password input
