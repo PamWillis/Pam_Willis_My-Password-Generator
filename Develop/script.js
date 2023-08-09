@@ -5,38 +5,36 @@ var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var possibleCharacters = [];
-// var passwordLength =[];
 var noResponseCount = 0;
 
 var generateBtn = document.querySelector("#generate");
 function generatePassword() {
-  var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"))
+  var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"));
   console.log(isNaN(passwordLength));
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Not a valid response");
     return null;
   }
 
-  var responseUpCase = confirm("Do you want Upper Case letters?")
-  console.log(responseUpCase);
+  var responseUpCase = confirm("Do you want Upper Case letters?");
   if (responseUpCase) {
     possibleCharacters.push(uppercaseCharacters);
   } else {
     noResponseCount++;
   }
-  var responseLowCase = confirm("Do you want Lower Case letters?")
+  var responseLowCase = confirm("Do you want Lower Case letters?");
   if (responseLowCase) {
     possibleCharacters.push(lowercaseCharacters);
   } else {
     noResponseCount++;
   }
-  var responseNumChar = confirm("Do you want Numerals?")
+  var responseNumChar = confirm("Do you want Numerals?");
   if (responseNumChar) {
     possibleCharacters.push(numbers);
   } else {
     noResponseCount++;
   }
-  var responseSpecChar = confirm("Do you want Special Characters?")
+  var responseSpecChar = confirm("Do you want Special Characters?");
   if (responseSpecChar) {
     possibleCharacters.push(specialCharacters);
   } else {
@@ -50,77 +48,93 @@ function generatePassword() {
   console.log(noResponseCount);
   console.log(possibleCharacters);
   console.log(passwordLength);
+
+  //puts characters in one array
   possibleCharacters = possibleCharacters.flat();
+
   console.log(possibleCharacters);
 
-  //if responseLowCase is true then it must pe in passwordText
-  //if responseUpCase is true then it must pe in passwordText 
-  //if responseNumChar is true then it must pe in passwordText 
-  //if responseSpecChar is true then it must pe in passwordText 
-  //count how many true described by noResponseCount
-  //subtract that number from passwordLength
-  //remainder can use randomIndex
-
-  //create a for loop for each response that is true, push random value into password
-  //subtract noResponseCount from passwordLength, run the rest
-  //
-
-  // Write password to the #password input
-
+  // push random characters into passwordText
   var passwordText = [];
-  var remainderText = [];
 
-
-  //first four ifs are to make sure one of each is in password
-  if (responseUpCase === true) {
-    var randomIndex = Math.floor(Math.random() * uppercaseCharacters.length);
-    var value = uppercaseCharacters[randomIndex];
-    console.log(value);
-    passwordText.push(value);
-  }
-  if (responseLowCase === true) {
-    var randomIndex = Math.floor(Math.random() * lowercaseCharacters.length);
-    var value = lowercaseCharacters[randomIndex];
-    console.log(value);
-    passwordText.push(value);
-  }
-  if (responseNumChar === true) {
-    var randomIndex = Math.floor(Math.random() * numbers.length);
-    var value = numbers[randomIndex];
-    console.log(value);
-    passwordText.push(value);
-  }
-  if (responseSpecChar === true) {
-    var randomIndex = Math.floor(Math.random() * specialCharacters.length);
-    var value = specialCharacters[randomIndex];
-    console.log(value);
-    passwordText.push(value);
-  }
-  var passwordText = passwordText.join("");
-  console.log(passwordText);
-  var addingPassLength = 4 - noResponseCount;
-
-
-
-  //This is to say  password length minus the the ones that are all ready filled.
-  passwordLength -= addingPassLength;
-  console.log(passwordLength);
-
-  //Last one is to put remainder in
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
     var value = possibleCharacters[randomIndex];
     console.log(value);
-    remainderText.push(value);
+    passwordText.push(value);
   }
-  var remainderText = remainderText.join("");
-  console.log(remainderText);
+  // join
+  var passwordText = passwordText.join("");
+  return passwordText;
+}
 
-  //Joining selections together
-  Finalpassword = passwordText + remainderText;
-  return Finalpassword
+//Validate passwordText
+//if response is true - test
+//if response is false - mark as true
+
+// function to validate length
+function validatePasswordLength(passwordText) {
+  passwordText = /^(?=.*\d)$/;
+  if (validatePasswordLength.test(passwordText)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+// function to validate uppercase
+function validateUpperCase(passwordText) {
+  if (responseUpCase === true) {
+    passwordText = /^(?=uppercaseCharacters)$/;
+    (validateUpperCase.test(passwordText))
+    return true;
+  }
+  if (responseUpCase === false) {
+    return true;
+  }
+}
+// function to validate lowercase
+function validateLowerCase(passwordText) {
+  if (responseLowCase === true) {
+    passwordText = /^(?=lowercaseCharacters)$/;
+    (validateLowerCase.test(passwordText));
+    return true;
+  }
+  if (responseLowCase === false) {
+    return true;
+  }
+}
+// function to validate numbers
+function validateNumbers(passwordText) {
+  if (responseNumChar === true) {
+    passwordText = /^(?=numbers)$/;
+    (validateNumbers.test(passwordText));
+    return true;
+  }
+  if (responseNumChar === false) {
+    return true;
+  }
+}
+// function to special characters
+function validateSpecChar(passwordText) {
+  if (responseSpecChar === true) {
+    passwordText = /^(?=specialCharacters)$/;
+    (validateSpecChar.test(passwordText));
+    return true;
+  }
+  if (responseSpecChar === false) {
+    return true;
+  }
+}
+//if any are false - alert bad password, else if true - good password
+if (validatePasswordLength || validateUpperCase || validateLowerCase || validateNumbers || validateSpecChar !== true) {
+  alert("password does not meet criteria");
 
 }
+  else {
+    alert("password is valid");
+
+  }
 
 
 // Write password to the #password input
