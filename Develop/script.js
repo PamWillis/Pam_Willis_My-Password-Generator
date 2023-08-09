@@ -10,7 +10,7 @@ var noResponseCount = 0;
 
 var generateBtn = document.querySelector("#generate");
 function generatePassword() {
-  var passwordLength = prompt("How many characters would you like between 8 and 128?")
+  var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"))
   console.log(isNaN(passwordLength));
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Not a valid response");
@@ -96,13 +96,16 @@ function generatePassword() {
     console.log(value);
     passwordText.push(value);
   }
-  var passwordText = passwordText.join(" ");
+  var passwordText = passwordText.join("");
   console.log(passwordText);
+  var addingPassLength = 4 - noResponseCount;
 
 
-  //This is to say # that are true minus passwordLength NOT WORKING, cant read passwordLength as a number
-  passwordLength = (passwordLength -= noResponseCount);
+
+  //This is to say  password length minus the the ones that are all ready filled.
+  passwordLength -= addingPassLength;
   console.log(passwordLength);
+
   //Last one is to put remainder in
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
@@ -110,11 +113,11 @@ function generatePassword() {
     console.log(value);
     remainderText.push(value);
   }
-  var remainderText = remainderText.join(" ");
+  var remainderText = remainderText.join("");
   console.log(remainderText);
-  
+
   //Joining selections together
-  Finalpassword = [[passwordText] + [remainderText]];
+  Finalpassword = passwordText + remainderText;
   return Finalpassword
 
 }
