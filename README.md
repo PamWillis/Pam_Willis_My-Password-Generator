@@ -4,7 +4,7 @@
 
 The password was created using a listener event for the button triggering the function to proceed to create a password
 
-- Each confirm requests the user to enter information needed to create password, then it is run through a series of pushing into an array and eventually flattening to create a pool of characters to choose from. Then the first characters are randomly chosen to make sure one of each initial array is included. In this process an isNan is added to make sure the password length value is a number. Finally the remainder characters are randomly filled. Then it is linked into the id(password) in the html file.
+- Each confirm requests the user to enter information needed to create password, then it is run through a series of pushing into an array and eventually flattening to create a pool of characters to choose from. Then the first characters are randomly chosen to make sure one of each initial array is included. In this process an isNan is added to make sure the password length value is a number, it is also checked to make sure it is in the range requested. Finally the remainder characters are randomly filled. Then it is linked into the id(password) in the html file.
 - Using pseudo code I have learned how to think the process through before writing the code. In the process I can break down what code will be needed, and in what order.
 - In writing the code, I went beyond the requirements and have guaranteed that at least one character from each chosen array will definately be in the password.
 - During this projects I have begun to understand javascript in how to write an if statement, function, use Math code to pull random characters, and also to use console.log along the way in order to test and make sure I am getting the result I expect.
@@ -46,7 +46,7 @@ When hitting the generate password, prompts will appear asking the user for how 
 
 ## Website and GitHub address
 
-Deployment website address:
+Deployment website address: https://pamwillis.github.io/Pam_Willis_My-Password-Generator/
 
 GitHub:
 https://github.com/PamWillis/Pam_Willis_My-Password-Generator.git
