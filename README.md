@@ -50,3 +50,6 @@ Deployment website address: https://pamwillis.github.io/Pam_Willis_My-Password-G
 
 GitHub:
 https://github.com/PamWillis/Pam_Willis_My-Password-Generator.git
+
+## Credit
+Assistance along the way was supplied by AskBCS and my tutor Juan Delgado, Juan suggested the isNan verification.
