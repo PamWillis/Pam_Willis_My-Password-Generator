@@ -1,100 +1,52 @@
-# 03 JavaScript: Password Generator
+# <Pam_Willis_My-Password-Generator>
 
-## Your Task
+## Creating a random password and validating to assure that it meets specifications entered
 
-This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+The password was created using a listener event for the button triggering the function to proceed to create a password
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+- Each confirm requests the user to enter information needed to create password, then it is run through a series of pushing into an array and eventually flattening to create a pool of characters to choose from. Then the first characters are randomly chosen to make sure one of each initial array is included. In this process an isNan is added to make sure the password length value is a number. Finally the remainder characters are randomly filled. Then it is linked into the id(password) in the html file.
+- Using pseudo code I have learned how to think the process through before writing the code. In the process I can break down what code will be needed, and in what order.
+- In writing the code, I went beyond the requirements and have guaranteed that at least one character from each chosen array will definately be in the password.
+- During this projects I have begun to understand javascript in how to write an if statement, function, use Math code to pull random characters, and also to use console.log along the way in order to test and make sure I am getting the result I expect.
 
-## User Story
+Within javascript it has been noted along the way of the full thought process in order to allow other coders to understand the process.
+![MockUp](README_assets/images/sample_1notes.png)
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+![MockUp](README_assets/images/sample_3notes.png)
 
-## Acceptance Criteria
+--This shows my pseudo code thought process for this section.
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+![MockUp](README_assets/images/sample_2notes.png)
 
-## Mock-Up
 
-The following image shows the web application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
-## Grading Requirements
+## Usage
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+The following show how the file is used.
+When hitting the generate password, prompts will appear asking the user for how long a password should be.
 
-This Challenge is graded based on the following criteria: 
+![MockUp](README_assets/images/generat_button.png)
 
-### Technical Acceptance Criteria: 40%
+--The first prompt will asking how many characters are required in password.
 
-* Satisfies all of the preceding acceptance criteria.
+![MockUp](README_assets/images/first_prompt.png)
 
-### Deployment: 32%
+--If a letter is entered this will appear and user will have to start over.
 
-* Application deployed at live URL.
+![MockUp](README_assets/images/notvalid.png)
 
-* Application loads with no errors.
+--Then user will click OK if you want requested characters or cancel if you do not, this continues until all  possible characters have been reviewed.
 
-* Application GitHub URL submitted.
+![MockUp](README_assets/images/second_prompt.png)
 
-* GitHub repository that contains application code.
+--A password is generated including chosen characters.
 
-### Application Quality: 15%
+![MockUp](README_assets/images/final_shot.png)
 
-* Application user experience is intuitive and easy to navigate.
+## Website and GitHub address
 
-* Application user interface style is clean and polished.
+Deployment website address:
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+GitHub:
+https://github.com/PamWillis/Pam_Willis_My-Password-Generator.git
