@@ -10,6 +10,7 @@ var possibleCharacters = [];
 var noResponseCount = 0;
 //query for id - generate button
 var generateBtn = document.querySelector("#generate");
+
 //function to create password
 function generatePassword() {
   var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"))
@@ -120,10 +121,11 @@ function generatePassword() {
   console.log(remainderText);
 
   //Joining selections together
-  Finalpassword = passwordText + remainderText;
-  return Finalpassword
+  var finalPassword = passwordText + remainderText;
+  return finalPassword;
 
 }
+
 
 
 // Write password to the #password input
@@ -137,4 +139,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
+generateBtn.addEventListener("click", writePassword.clear());
+generateBtn.addEventListener("click", writePassword);
