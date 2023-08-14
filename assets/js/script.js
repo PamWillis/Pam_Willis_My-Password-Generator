@@ -13,6 +13,7 @@ var generateBtn = document.querySelector("#generate");
 
 //function to create password
 function generatePassword() {
+  
   var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"))
   console.log(isNaN(passwordLength)); //isNan tests to make sure the entered character has a value of a number
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -139,5 +140,14 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-generateBtn.addEventListener("click", writePassword.clear());
-generateBtn.addEventListener("click", writePassword);
+
+// function clear() {
+//   writePassword.clear();
+//   generatePassword.clear();
+  
+// }
+
+
+generateBtn.addEventListener("click", clear);
+
+
