@@ -17,6 +17,7 @@ function generatePassword() {
   
   var passwordLength = Number(prompt("How many characters would you like between 8 and 128?"))
   console.log(isNaN(passwordLength)); //isNan tests to make sure the entered character has a value of a number
+  possibleCharacters =[]; //reset possibleCharacters
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Not a valid response");
     return null;
@@ -141,30 +142,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//CLEAR FUNCTION
-// function clear() {
-//   writePassword.clear();
-//   generatePassword.clear(); 
-// }
-
-//EMPTYING ARRAYS
-// generateBtn.addEventListener("click", function() {
-//   // writePassword =[];
-//   passwordText = [];  
-// });
-
-// DEFAULT PUT THIS IN VARIOUS PLACES, JUST STOPS IT ALL TOGETHER
-// // event.preventDefault();
-
-// NUMBER OF CLICKS TO MAKE GENERATE PASSWORD.VALUE NONE
-// let clicks = 0;
-// const button = getElementById("generate");
-// button.onclick = function() {
-//   clicks++ === 0;
-//   if (clicks===1) { generateBtn.addEventListener("click", writePassword); 
-// }
-//   else {
-//     (clicks===2) document.querySelector("generatePassword.value") = "none"; 
-// };
 
