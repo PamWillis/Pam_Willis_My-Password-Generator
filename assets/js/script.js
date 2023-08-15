@@ -11,6 +11,7 @@ var noResponseCount = 0;
 //query for id - generate button
 var generateBtn = document.querySelector("#generate");
 
+
 //function to create password
 function generatePassword() {
   
@@ -141,13 +142,29 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//CLEAR FUNCTION
 // function clear() {
 //   writePassword.clear();
-//   generatePassword.clear();
-  
+//   generatePassword.clear(); 
 // }
 
+//EMPTYING ARRAYS
+// generateBtn.addEventListener("click", function() {
+//   // writePassword =[];
+//   passwordText = [];  
+// });
 
-generateBtn.addEventListener("click", clear);
+// DEFAULT PUT THIS IN VARIOUS PLACES, JUST STOPS IT ALL TOGETHER
+// // event.preventDefault();
 
+// NUMBER OF CLICKS TO MAKE GENERATE PASSWORD.VALUE NONE
+// let clicks = 0;
+// const button = getElementById("generate");
+// button.onclick = function() {
+//   clicks++ === 0;
+//   if (clicks===1) { generateBtn.addEventListener("click", writePassword); 
+// }
+//   else {
+//     (clicks===2) document.querySelector("generatePassword.value") = "none"; 
+// };
 
